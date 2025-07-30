@@ -29,3 +29,27 @@ def number_of_chars(book_text):
             character_dict[char] = 1
     
     return character_dict
+
+def generate_sorted_list(character_dict):
+    """Generate a sorted list of dictionaries with each character and their count.
+
+    :param character_dict: dict - dictionary with character as key and number of occurences as value
+    :return: list - list of dictionaries with char and num keys
+
+    Function that iterates over a dictionary of characters, and sorts them into a list from highest to lowest of each chcarcter and their count.
+    """
+    sorted_list = []
+
+    def sort_on(items):
+        return items["num"]
+
+    for char, num in character_dict.items():
+        new_dict = {}
+        if char.isalpha():
+            new_dict["char"] = char
+            new_dict["num"] = num
+            sorted_list.append(new_dict)
+        
+    sorted_list.sort(reverse=True, key=sort_on)
+
+    return sorted_list
