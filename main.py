@@ -1,3 +1,4 @@
+import sys
 from stats import number_of_words
 from stats import number_of_chars
 from stats import generate_sorted_list
@@ -11,12 +12,15 @@ def get_book_text(file_path):
     Function that takes the file path to the .txt book file, reads the file, and then returns its full contents.
     """
     
-    with open(file_path) as f:
+    with open(sys.argv[1]) as f:
         return f.read()
 
 def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
 
-    book_text = get_book_text("books/frankenstein.txt")
+    book_text = get_book_text(sys.argv[1])
 
     num_words = number_of_words(book_text)
 

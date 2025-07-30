@@ -36,7 +36,7 @@ def generate_sorted_list(character_dict):
     :param character_dict: dict - dictionary with character as key and number of occurences as value
     :return: list - list of dictionaries with char and num keys
 
-    Function that iterates over a dictionary of characters, and sorts them into a list from highest to lowest of each chcarcter and their count.
+    Function that iterates over a dictionary of characters, sorts them into a list from highest to lowest of each character and their count.
     """
     sorted_list = []
 
