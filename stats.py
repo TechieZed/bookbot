@@ -15,7 +15,17 @@ def number_of_chars(book_text):
     :param book_text: str - full text of book
     :return: dict - dictionary with characters as the key and number of occurences as the value
 
-    Function that takes the full text of a book and returns a dictionary containing each character and the number of times each character occurs in the book.
+    Function that takes the full text of a book and returns a dictionary containing each character with the number of times each occurs in the book.
     """
 
-    pass
+    character_dict = {}
+
+    lower_case = book_text.lower()
+
+    for char in lower_case:
+        if char in character_dict:
+            character_dict[char] += 1
+        else:
+            character_dict[char] = 1
+    
+    return character_dict
